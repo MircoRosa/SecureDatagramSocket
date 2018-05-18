@@ -1,5 +1,5 @@
 # Secure Datagram Socket 
-The SecureDatagramSocket class allows to send and receive encrypted data between entities using Diffie-Hellman key exchange scheme, AES and more.
+SecureDatagramSocket is a library that allows to send and receive encrypted data between entities using Diffie-Hellman key exchange scheme, AES and more.
 
 ## Usage
 Here is a basic example of how the library can be used. For a more complex use case, refer to Alice and Bob classes included in the project.
@@ -11,7 +11,7 @@ Bob waits for requests simply using
 ```java
 socket.waitDHSetup();
 ```
-On the other hand, Alice can try to establish a connection with
+while Alice can try to establish a connection with
 ```java
 socket.askDHSetup("Alice",IPAddress,Prefs.BOB_PORT);
 ```
@@ -22,7 +22,7 @@ A new message can be sent simply using
 ```java
 socket.secureSend(plainPacket);
 ```
-while the recipient must be listening to new messages with
+while the recipient must be waiting for new messages with
 ```java
 socket.secureReceive(plainPacket);
 ```
